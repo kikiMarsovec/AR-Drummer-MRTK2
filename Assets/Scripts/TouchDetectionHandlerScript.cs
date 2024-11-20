@@ -6,8 +6,8 @@ using UnityEngine;
 public class TouchDetectionHandlerScript : MonoBehaviour {
 
 	public bool isEnabled = true;
-	public float differentHandCooldown = 0.01f;
-	public float sameHandCooldown = 0.1f;
+	public float differentHandCooldown = 0.06f;
+	public float sameHandCooldown = 0.15f;
 	Dictionary<string, float> cooldownDictionary = new Dictionary<string, float>();
 
 	public GameObject AudioManagerObject;

@@ -654,9 +654,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1533219181749342302, guid: 1095ef16822cda044ba8341776604bb0, type: 3}
+      propertyPath: sameHandCooldown
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533219181749342302, guid: 1095ef16822cda044ba8341776604bb0, type: 3}
       propertyPath: AudioManagerObject
       value: 
       objectReference: {fileID: 483549236}
+    - target: {fileID: 1533219181749342302, guid: 1095ef16822cda044ba8341776604bb0, type: 3}
+      propertyPath: differentHandCooldown
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 1533219181749342303, guid: 1095ef16822cda044ba8341776604bb0, type: 3}
       propertyPath: m_Name
       value: DrumTouchHandler
