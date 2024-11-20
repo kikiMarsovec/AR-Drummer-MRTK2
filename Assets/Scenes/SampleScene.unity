@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &483549236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483549238}
+  - component: {fileID: 483549237}
+  m_Layer: 0
+  m_Name: AudioManagerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &483549237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483549236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50834acae8c5e24496a51c9eb3531ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drumClips:
+  - {fileID: 8300000, guid: 9f59f1b3a0b60b54a9e16f1d8e335421, type: 3}
+  - {fileID: 8300000, guid: f582bb605e8d00a4e914693f04d54c93, type: 3}
+--- !u!4 &483549238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483549236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3511859, y: -0.45646405, z: 1.2443513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +587,10 @@ PrefabInstance:
       propertyPath: drumTouchHandler
       value: 
       objectReference: {fileID: 1812606208}
+    - target: {fileID: 7756752245761583643, guid: ba28c355a63065b4789165912c1a2bd3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7756752245761583647, guid: ba28c355a63065b4789165912c1a2bd3, type: 3}
       propertyPath: m_Name
       value: TouchPad
@@ -602,6 +653,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1533219181749342302, guid: 1095ef16822cda044ba8341776604bb0, type: 3}
+      propertyPath: AudioManagerObject
+      value: 
+      objectReference: {fileID: 483549236}
     - target: {fileID: 1533219181749342303, guid: 1095ef16822cda044ba8341776604bb0, type: 3}
       propertyPath: m_Name
       value: DrumTouchHandler

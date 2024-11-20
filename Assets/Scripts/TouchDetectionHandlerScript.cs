@@ -10,32 +10,33 @@ public class TouchDetectionHandlerScript : MonoBehaviour {
 	public float sameHandCooldown = 0.1f;
 	Dictionary<string, float> cooldownDictionary = new Dictionary<string, float>();
 
+	public GameObject AudioManagerObject;
+	private AudioManager audioManager;
+
+	private void Start() {
+		audioManager = AudioManagerObject.GetComponent<AudioManager>();	
+	}
+
 	public void HandleTouch(string drumType, string drumName, string handType, double distance) {
 		if (!isEnabled)
 			return; // isn't enabled
 
-		if (!CooldownCheck(drumType, drumName, handType)) {
+		if (!CooldownCheck(drumType, drumName, handType))
 			return; // cooldown failed
-		}
 
 		PlaySound(drumType, drumName, distance);
 	}
-	/*
-	 * TODO:
-	 * - determine if okay because of cooldown (by each hand)
-	 * - deretmine sound (based on drum type, drum name and distance)
-	 * - play sound
-	 */
 
 	private void PlaySound(string drumType, string drumName, double distance) {
 		switch (drumType+drumName) {
 			case "djembe":
-				if (distance < 0.4) {
-					Debug.Log("Play Djembe bass");
+				if (distance < 0.3) {
+					audioManager.PlayDrumSound("djembe-bass");
 				} else {
-					Debug.Log("Play Djembe snare");
+					audioManager.PlayDrumSound("djembe-snare");
 				}
 				break;
+			// TODO check AudioManager.cs for other sound names
 
 			default:
 				Debug.Log("No such drum");
