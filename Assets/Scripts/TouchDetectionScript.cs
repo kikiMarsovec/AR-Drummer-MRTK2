@@ -6,6 +6,10 @@ using UnityEngine.XR;
 
 public class TouchDetectionScript : MonoBehaviour, IMixedRealityPointerHandler {
 
+	public string drumType = "";
+	public string drumName = "";
+	public GameObject drumTouchHandler;
+
 	void IMixedRealityPointerHandler.OnPointerDown(MixedRealityPointerEventData eventData) {
 		if (eventData.Pointer is PokePointer) {
 			// check which hand triggered the pointer
@@ -25,23 +29,18 @@ public class TouchDetectionScript : MonoBehaviour, IMixedRealityPointerHandler {
 			Vector3 center = gameObject.transform.position;
 			center.z -= gameObject.transform.lossyScale.z / 2;
 			double radius = gameObject.transform.lossyScale.x / 2 * 1.1;
+			double distance = Vector3.Distance(center, handPosition);
 
-			if (Vector3.Distance(center, handPosition) <= radius) {
-				// successfully played the drum
-				Debug.Log("Drum successfully played.");
-				Debug.Log(handPosition);
-			} else {
+			if (distance > radius) {
+				// Touched too far from the center
 				Debug.Log("Too far from center.");
+				return;
+			} else {
+				// Touched drum successfully
+				drumTouchHandler.GetComponent<TouchDetectionHandlerScript>().HandleTouch(drumType, drumName, handType, distance/radius);
 			}
 		}
 	}
-
-	/*
-	 * TODO:
-	 * - izracunaj ali je roka znotraj kroga (DONE)
-	 * - cooldown za isto roko (Da ne triggeramo bobna dvakrat z isto roko. Za obe roki je manjsi cooldown ce npr zelimo izvesti Flam udarec po bobnu.)
-	 * - posljemo info na neko kontrolno enoto, ki preveri cooldowne in prozi zvok od udarca (in kasneje prozi tudi animacije bobnov)
-	 */
 
 	// We don't need these methods, but they must be implemented
 	void IMixedRealityPointerHandler.OnPointerClicked(MixedRealityPointerEventData eventData) {	}
