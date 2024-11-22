@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine.XR;
+using Microsoft.MixedReality.Toolkit;
+using Unity.XR.CoreUtils;
 
 public class TouchDetectionScript : MonoBehaviour, IMixedRealityPointerHandler {
 
 	public string drumType = "";
 	public string drumName = "";
 	public GameObject drumTouchHandler;
+	private Transform centerObj;
+
+	private void Start() {
+		centerObj = transform.GetChild(0);
+	}
 
 	void IMixedRealityPointerHandler.OnPointerDown(MixedRealityPointerEventData eventData) {
 		if (eventData.Pointer is PokePointer) {
@@ -26,8 +33,8 @@ public class TouchDetectionScript : MonoBehaviour, IMixedRealityPointerHandler {
 					break;
 			}
 			Vector3 handPosition = hand.transform.position;
-			Vector3 center = gameObject.transform.position;
-			center.y += gameObject.transform.lossyScale.y / 2;
+			Vector3 center = centerObj.position;
+			//center.y += gameObject.transform.lossyScale.y / 2;
 			double radius = gameObject.transform.lossyScale.x / 2 * 1.1;
 			double distance = Vector3.Distance(center, handPosition);
 
