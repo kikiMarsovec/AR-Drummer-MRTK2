@@ -27,7 +27,7 @@ public class TouchDetectionScript : MonoBehaviour, IMixedRealityPointerHandler {
 			}
 			Vector3 handPosition = hand.transform.position;
 			Vector3 center = gameObject.transform.position;
-			center.z -= gameObject.transform.lossyScale.z / 2;
+			center.y += gameObject.transform.lossyScale.y / 2;
 			double radius = gameObject.transform.lossyScale.x / 2 * 1.1;
 			double distance = Vector3.Distance(center, handPosition);
 

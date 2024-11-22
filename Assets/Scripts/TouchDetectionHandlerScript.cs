@@ -30,7 +30,7 @@ public class TouchDetectionHandlerScript : MonoBehaviour {
 	private void PlaySound(string drumType, string drumName, double distance) {
 		switch (drumType+drumName) {
 			case "djembe":
-				if (distance < 0.3) {
+				if (distance < 0.36) {
 					audioManager.PlayDrumSound("djembe-bass");
 				} else {
 					audioManager.PlayDrumSound("djembe-snare");
