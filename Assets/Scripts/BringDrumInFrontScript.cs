@@ -5,17 +5,18 @@ using UnityEngine;
 public class BringDrumInFrontScript : MonoBehaviour
 {
 	public GameObject djembe;
+	public GameObject drumSet;
+	public GameObject bongos; // TODO SET BONGOS IN EDITOR
+
+	private void Start() {
+		BringDrumInFront();
+	}
 
 	public void BringDrumInFront() {
 		Transform cameraTransform = Camera.main.transform;
-		Vector3 positionInFrontOfCamera = cameraTransform.position + cameraTransform.forward * 0.5f;
+		Vector3 positionInFrontOfCamera = cameraTransform.position + cameraTransform.forward * 2f;
 		djembe.transform.position = positionInFrontOfCamera;
-	}
-
-    // Update is called once per frame
-    void Update() {
-		if (Input.GetKeyDown(KeyCode.Alpha3)) {
-			BringDrumInFront();
-		}
+		drumSet.transform.position = positionInFrontOfCamera;
+		// TODO ISTO NAREDI SE BONGOS
 	}
 }
