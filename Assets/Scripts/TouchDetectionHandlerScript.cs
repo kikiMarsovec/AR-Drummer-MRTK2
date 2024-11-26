@@ -61,8 +61,24 @@ public class TouchDetectionHandlerScript : MonoBehaviour {
 			case "drumsetride":
 				audioManager.PlayDrumSound("drumset-ride");
 				break;
-			// TODO check AudioManager.cs for other sound names
-			
+			case "bongosconga1":
+				audioManager.PlayDrumSound("bongos-conga1");
+				break;
+			case "bongosconga2":
+				audioManager.PlayDrumSound("bongos-conga2");
+				break;
+			case "bongosbongo1":
+				audioManager.PlayDrumSound("bongos-bongo1");
+				break;
+			case "bongosbongo2":
+				audioManager.PlayDrumSound("bongos-bongo2");
+				break;
+			case "bongoscymbal1":
+				audioManager.PlayDrumSound("bongos-cymbal1");
+				break;
+			case "bongoscymbal2":
+				audioManager.PlayDrumSound("bongos-cymbal2");
+				break;
 			default:
 				Debug.Log("No such drum: " + drumType + "-" + drumName);
 				break;

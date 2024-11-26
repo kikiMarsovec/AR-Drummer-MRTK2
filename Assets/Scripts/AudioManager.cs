@@ -35,7 +35,6 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	private int ConvertToIndex(string drumSound) {
-		// TODO ADD DRUM SOUNDS HERE (and in the editor)
 		switch (drumSound) {
 			case "djembe-bass":
 				return 0;
@@ -57,6 +56,18 @@ public class AudioManager : MonoBehaviour {
 				return 8;
 			case "drumset-tom2":
 				return 9;
+			case "bongos-bongo2":
+				return 10;
+			case "bongos-bongo1":
+				return 11;
+			case "bongos-conga1":
+				return 12;
+			case "bongos-conga2":
+				return 13;
+			case "bongos-cymbal2":
+				return 14;
+			case "bongos-cymbal1":
+				return 15;
 			default:
 				return -1;
 		}

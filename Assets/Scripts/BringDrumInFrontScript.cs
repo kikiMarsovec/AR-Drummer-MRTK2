@@ -6,7 +6,7 @@ public class BringDrumInFrontScript : MonoBehaviour
 {
 	public GameObject djembe;
 	public GameObject drumSet;
-	public GameObject bongos; // TODO SET BONGOS IN EDITOR
+	public GameObject bongos;
 
 	private void Start() {
 		BringDrumInFront();
@@ -17,6 +17,6 @@ public class BringDrumInFrontScript : MonoBehaviour
 		Vector3 positionInFrontOfCamera = cameraTransform.position + cameraTransform.forward * 2f;
 		djembe.transform.position = positionInFrontOfCamera;
 		drumSet.transform.position = positionInFrontOfCamera;
-		// TODO ISTO NAREDI SE BONGOS
+		bongos.transform.position = positionInFrontOfCamera;
 	}
 }

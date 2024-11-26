@@ -6,7 +6,7 @@ public class ChangeDrumScript : MonoBehaviour {
 
 	public GameObject djembe;
 	public GameObject drumSet;
-	public GameObject bongos; // TODO SET BONGOS IN EDITOR
+	public GameObject bongos;
 	public GameObject bringDrumInFrontObject;
 	private BringDrumInFrontScript bringDrumInFrontScript;
 
@@ -20,7 +20,7 @@ public class ChangeDrumScript : MonoBehaviour {
         // on start we disable all the drums except djembe
 		djembe.SetActive(true);
 		drumSet.SetActive(false);
-		// bongos.SetActive(false); TODO uncomment when bongos are implemented
+		bongos.SetActive(false);
 	}
 
 	public void ChangeDrum() {
@@ -28,8 +28,7 @@ public class ChangeDrumScript : MonoBehaviour {
 		// change drum according to the current state
 		switch (currentState) {
 			case 0: // djembe
-				// TODO uncomment when bongos are implemented
-				// bongos.SetActive(false);
+				bongos.SetActive(false);
 				djembe.SetActive(true);
 				break;
 			case 1: // drum set
@@ -38,8 +37,7 @@ public class ChangeDrumScript : MonoBehaviour {
 				break;
 			case 2: // bongos
 				drumSet.SetActive(false);
-				// TODO uncomment when bongos are implemented
-				// bongos.SetActive(true);
+				bongos.SetActive(true);
 				break;
 		}
 		bringDrumInFrontScript.BringDrumInFront();

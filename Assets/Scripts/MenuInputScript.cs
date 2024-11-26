@@ -9,7 +9,7 @@ public class MenuInputScript : MonoBehaviour {
     public GameObject drumTouchHandler;
 	public GameObject djembe;
 	public GameObject drumSet;
-	public GameObject bongos; // TODO SET BONGOS IN EDITOR
+	public GameObject bongos;
 
 	private void Start() {
 		EnableMovement();
@@ -31,7 +31,10 @@ public class MenuInputScript : MonoBehaviour {
 		drumSet.GetComponent<BoxCollider>().enabled = true;
 		drumSet.GetComponent<ObjectManipulator>().enabled = true;
 		drumSet.GetComponent<NearInteractionGrabbable>().enabled = true;
-		// bongos TODO
+		// bongos 
+		bongos.GetComponent<BoxCollider>().enabled = true;
+		bongos.GetComponent<ObjectManipulator>().enabled = true;
+		bongos.GetComponent<NearInteractionGrabbable>().enabled = true;
 
 		drumTouchHandler.GetComponent<TouchDetectionHandlerScript>().isEnabled = false;
 	}
@@ -45,7 +48,10 @@ public class MenuInputScript : MonoBehaviour {
 		drumSet.GetComponent<BoxCollider>().enabled = false;
 		drumSet.GetComponent<ObjectManipulator>().enabled = false;
 		drumSet.GetComponent<NearInteractionGrabbable>().enabled = false;
-		// bongos TODO
+		// bongos
+		bongos.GetComponent<BoxCollider>().enabled = false;
+		bongos.GetComponent<ObjectManipulator>().enabled = false;
+		bongos.GetComponent<NearInteractionGrabbable>().enabled = false;
 
 		drumTouchHandler.GetComponent<TouchDetectionHandlerScript>().isEnabled = true;
 	}
