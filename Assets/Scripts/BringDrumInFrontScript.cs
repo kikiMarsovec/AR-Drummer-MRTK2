@@ -8,10 +8,6 @@ public class BringDrumInFrontScript : MonoBehaviour
 	public GameObject drumSet;
 	public GameObject bongos;
 
-	private void Start() {
-		BringDrumInFront();
-	}
-
 	public void BringDrumInFront() {
 		Transform cameraTransform = Camera.main.transform;
 		Vector3 positionInFrontOfCamera = cameraTransform.position + cameraTransform.forward * 2f;

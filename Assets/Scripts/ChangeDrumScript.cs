@@ -17,13 +17,19 @@ public class ChangeDrumScript : MonoBehaviour {
 
 	void Start() {
 		bringDrumInFrontScript = bringDrumInFrontObject.GetComponent<BringDrumInFrontScript>();
-        // on start we disable all the drums except djembe
+		bringDrumInFrontScript.BringDrumInFront();
+		// on start we disable all the drums except djembe
 		djembe.SetActive(true);
 		drumSet.SetActive(false);
 		bongos.SetActive(false);
 	}
 
 	public void ChangeDrum() {
+		// TODO remove from here (ONLY FOR PROTOTYPE)
+		bringDrumInFrontScript.BringDrumInFront();
+		return;
+		// TODO remove until here (ONLY FOR PROTOTYPE)
+
 		currentState = (currentState + 1) % 3;
 		// change drum according to the current state
 		switch (currentState) {
