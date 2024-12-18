@@ -48,10 +48,4 @@ public class ChangeDrumScript : MonoBehaviour {
 		}
 		bringDrumInFrontScript.BringDrumInFront();
 	}
-
-	void Update() { // TODO DELETE
-		if (Input.GetKeyDown(KeyCode.Alpha3)) {
-			ChangeDrum();
-		}
-	}
 }

@@ -23,13 +23,6 @@ public class MenuInputScript : MonoBehaviour {
 		EnableMovement();
 		metronomeScript = metronomeHandlerObject.GetComponent<MetronomeScript>();
 	}
-	
-	void Update() { // TODO only for testing - can be deleted later
-		if (Input.GetKeyDown(KeyCode.Alpha1))
-            EnableMovement();
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            DisableMovement();
-	}
 
     public void EnableMovement() {
 		// disable enableMovementButton and enable playDrumsButton on the hand menu
