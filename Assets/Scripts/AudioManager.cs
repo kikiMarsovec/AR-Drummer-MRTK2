@@ -68,6 +68,8 @@ public class AudioManager : MonoBehaviour {
 				return 14;
 			case "bongos-cymbal1":
 				return 15;
+			case "metronome":
+				return 16;
 			default:
 				return -1;
 		}
